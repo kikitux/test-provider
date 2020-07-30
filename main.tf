@@ -13,3 +13,9 @@ variable "myvar" {
 output "myvalue" {
   value = var.myvar
 }
+
+resource "null_resource" "null" {
+  triggers = {
+    always_run = timestamp()
+  }
+}
